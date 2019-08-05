@@ -6,18 +6,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    Map<String, WidgetBuilder> routes = {
+      '/': (BuildContext context) => Login(title: 'Login'),
+      '/home': (BuildContext context) => Home(title: 'Home')
+    };
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
-      home: MyHomePage(title: 'Flutter Dashboard Login'),
+      initialRoute: '/',
+      routes: routes
     );
   }
 }
 
-class MyHomePage extends StatelessWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+class Login extends StatelessWidget {
+  Login({Key key, this.title}) : super(key: key);
 
   final String title;
 
@@ -85,6 +90,38 @@ class MyHomePage extends StatelessWidget {
                   ]
                 )
               )
+            )
+          ]
+        )
+      ) // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  Home({Key key, this.title}) : super(key: key);
+
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Center(
+          child: Text(
+            title,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        backgroundColor: Colors.cyan,
+        elevation: 0        
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Text('Home'),
             )
           ]
         )
