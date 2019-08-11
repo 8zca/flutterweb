@@ -58,7 +58,9 @@ class Login extends StatelessWidget {
                     ),
                     Container(
                       child: RaisedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/home');
+                        },
                         child: Text('Login', style: TextStyle(color: Colors.white)),
                         elevation: 0,
                         highlightElevation: 0,
