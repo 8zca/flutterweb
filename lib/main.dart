@@ -1,6 +1,7 @@
 import 'package:flutter_web/material.dart';
 import 'package:flutterweb/pages/login/login.dart';
 import 'package:flutterweb/pages/home/home.dart';
+import 'package:flutterweb/pages/table/my_table.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,7 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     Map<String, WidgetBuilder> routes = {
       '/': (BuildContext context) => Login(title: 'Login'),
-      '/home': (BuildContext context) => Home(title: 'Home')
+      '/table': (BuildContext context) => MyTable(title: 'Table'),
+      '/home': (BuildContext context) => Home(title: 'Home'),
     };
     return MaterialApp(
       title: 'Flutter Demo',
